@@ -1,21 +1,14 @@
+import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
-import WhoWeHelp from "@/components/sections/WhoWeHelp";
-import AboutUs from "@/components/sections/AboutUs";
-import WhatWeBuild from "@/components/sections/WhatWeBuild";
-import Team from "@/components/sections/Team";
-import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer"
+import TopBar from "@/components/TopBar";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <WhoWeHelp />
-      <AboutUs />
-      <WhatWeBuild />
-      <Team />
-      <Contact />
-      <Footer />
-    </>
+    <div className="">
+     <TopBar/>
+     <Header/>
+     <Hero/>
+    </div>
   );
 }
