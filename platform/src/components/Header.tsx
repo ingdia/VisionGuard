@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import logo from "../../public/images/logo.png";
+import logo from "../../public/images/logo.jpeg";
 
 
 function Header() {
@@ -25,7 +25,7 @@ function Header() {
           <li>Contact Us</li>
         </ul>
       </nav>
-      <button className='bg-black text-white px-4 py-1 rounded-md'>
+      <button className='bg-slate-700 text-white px-4 py-1 rounded-md'>
         let's talk
       </button>
     </div>

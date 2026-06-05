@@ -6,7 +6,7 @@ function Hero() {
 
       <div className="relative bg-[url('/images/Hero.jpg')] bg-cover bg-center h-screen">
 
-        <div className="absolute inset-0 bg-black/80"></div>
+        <div className="absolute inset-0 bg-slate-800/80"></div>
 
         {/* Content */}
         <div className="relative z-10 flex items-center justify-center h-full">

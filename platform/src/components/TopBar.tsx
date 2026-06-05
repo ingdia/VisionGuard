@@ -3,7 +3,7 @@ import { Phone, Mail, Clock } from "lucide-react";
 
 function TopBar() {
   return (
-    <div className="bg-black px-10 font-serif text-sm text-white p-2 flex justify-between">
+    <div className="bg-slate-700 px-10 font-serif text-sm text-white p-2 flex justify-between">
       <div>
         <p>follow us:
         instagram, facebook, twitter</p>
