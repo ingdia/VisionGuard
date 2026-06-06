@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react'
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../public/images/logo.jpeg";
 import { Menu, X } from "lucide-react";
 
@@ -17,7 +18,11 @@ function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 bg-white font-sans transition-shadow duration-300 ${scrolled ? "shadow-md" : "border-b border-gray-100"}`}>
+    <motion.header
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`sticky top-0 z-50 bg-white font-sans transition-shadow duration-300 ${scrolled ? "shadow-md" : "border-b border-gray-100"}`}>
       <div className="flex items-center justify-between px-4 md:px-10 py-3">
         {/* Logo */}
         <div className="w-36 h-10 relative flex-shrink-0">
@@ -53,19 +58,39 @@ function Header() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden border-t border-gray-100 px-4 py-4 flex flex-col gap-1 bg-white">
-          {navLinks.map(link => (
-            <a key={link} href="#" className="py-2.5 px-3 text-sm text-slate-700 font-medium hover:bg-slate-50 rounded-md transition-colors">
-              {link}
-            </a>
-          ))}
-          <button className="mt-3 bg-slate-700 hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors w-full">
-            Let&apos;s Talk
-          </button>
-        </div>
-      )}
-    </header>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden border-t border-gray-100 px-4 py-4 flex flex-col gap-1 bg-white overflow-hidden"
+          >
+            {navLinks.map((link, i) => (
+              <motion.a
+                key={link}
+                href="#"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="py-2.5 px-3 text-sm text-slate-700 font-medium hover:bg-slate-50 rounded-md transition-colors"
+              >
+                {link}
+              </motion.a>
+            ))}
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="mt-3 bg-slate-700 hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors w-full"
+            >
+              Let&apos;s Talk
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   )
 }
 

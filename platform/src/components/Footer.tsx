@@ -3,8 +3,8 @@ import { Phone, Mail, Clock, MapPin } from 'lucide-react'
 
 const footerLinks = {
   Company: ["About Us", "Our Team", "Careers", "Blog"],
-  Services: ["CCTV Surveillance", "Guard Services", "Alarm Systems", "Consulting"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Services: ["Web Development", "Digital Systems", "Online Visibility", "Brand Identity"],
+  Programs: ["Internships", "Training", "Student Projects", "Apply Now"],
 }
 
 function Footer() {
@@ -15,7 +15,7 @@ function Footer() {
         <div>
           <h2 className="text-white text-xl font-bold mb-3">VisionGuard</h2>
           <p className="text-sm leading-relaxed mb-5">
-            Professional security solutions built on trust, technology, and expertise.
+            Helping businesses become visible, trusted, and competitive in the digital world.
           </p>
           <div className="flex flex-col gap-2 text-sm">
             <span className="flex items-center gap-2"><Phone size={13} className="text-slate-300" /> +250 798 334 054</span>
