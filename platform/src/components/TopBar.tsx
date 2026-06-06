@@ -16,9 +16,9 @@ function TopBar() {
         ))}
       </div>
       <div className="hidden sm:flex items-center gap-5">
-        <span className="flex items-center gap-1.5"><Phone size={12} className="text-blue-400" /> +250 798 334 054</span>
-        <span className="hidden md:flex items-center gap-1.5"><Mail size={12} className="text-blue-400" /> ngabiblackiane02@gmail.com</span>
-        <span className="hidden lg:flex items-center gap-1.5"><Clock size={12} className="text-blue-400" /> Sun–Fri &nbsp;9:00 AM – 5:00 PM</span>
+        <span className="flex items-center gap-1.5"><Phone size={12} className="text-slate-300" /> +250 798 334 054</span>
+        <span className="hidden md:flex items-center gap-1.5"><Mail size={12} className="text-slate-300" /> ngabiblackiane02@gmail.com</span>
+        <span className="hidden lg:flex items-center gap-1.5"><Clock size={12} className="text-slate-300" /> Sun–Fri &nbsp;9:00 AM – 5:00 PM</span>
       </div>
     </div>
   )

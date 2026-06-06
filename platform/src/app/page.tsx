@@ -1,7 +1,13 @@
 import Header from "@/components/Header";
-import Hero from "@/components/sections/Hero";
-import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
+import TopBar from "@/components/TopBar";
+import Hero from "@/components/sections/Hero";
+import Stats from "@/components/sections/Stats";
+import Services from "@/components/sections/Services";
+import About from "@/components/sections/About";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Testimonials from "@/components/sections/Testimonials";
+import CTA from "@/components/sections/CTA";
 
 export default function Home() {
   return (
@@ -10,6 +16,12 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <Stats />
+        <Services />
+        <About />
+        <HowItWorks />
+        <Testimonials />
+        <CTA />
       </main>
       <Footer />
     </div>
