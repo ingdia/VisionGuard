@@ -2,9 +2,24 @@ import React from 'react'
 import { Phone, Mail, Clock, MapPin } from 'lucide-react'
 
 const footerLinks = {
-  Company: ["About Us", "Our Team", "Careers", "Blog"],
-  Services: ["Web Development", "Digital Systems", "Online Visibility", "Brand Identity"],
-  Programs: ["Internships", "Training", "Student Projects", "Apply Now"],
+  Company: [
+    { label: "About Us",   href: "/about" },
+    { label: "Our Team",   href: "/about" },
+    { label: "Careers",    href: "#" },
+    { label: "Blog",       href: "#" },
+  ],
+  Services: [
+    { label: "Web Development",  href: "/services" },
+    { label: "Digital Systems",  href: "/services" },
+    { label: "Online Visibility",href: "/services" },
+    { label: "Brand Identity",   href: "/services" },
+  ],
+  Programs: [
+    { label: "Internships",      href: "/about" },
+    { label: "Training",         href: "/about" },
+    { label: "Student Projects", href: "#" },
+    { label: "Apply Now",        href: "#" },
+  ],
 }
 
 function Footer() {
@@ -30,9 +45,9 @@ function Footer() {
           <div key={title}>
             <h3 className="text-white text-sm font-semibold uppercase tracking-widest mb-4">{title}</h3>
             <ul className="flex flex-col gap-2">
-              {links.map(link => (
-                <li key={link}>
-                  <a href="#" className="text-sm hover:text-white transition-colors duration-200">{link}</a>
+              {links.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm hover:text-white transition-colors duration-200">{label}</a>
                 </li>
               ))}
             </ul>
