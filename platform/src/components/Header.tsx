@@ -5,7 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../public/images/logo.jpeg";
 import { Menu, X } from "lucide-react";
 
-const navLinks = ["Home", "About Us", "Services", "Projects", "Blog", "Contact Us"];
+const navLinks = [
+  { label: "Home",       href: "/" },
+  { label: "About Us",   href: "/about" },
+  { label: "Services",   href: "/services" },
+  { label: "Projects",   href: "#" },
+  { label: "Blog",       href: "#" },
+  { label: "Contact Us", href: "/contact" },
+];
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,13 +38,13 @@ function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
-          {navLinks.map(link => (
+          {navLinks.map(({ label, href }) => (
             <a
-              key={link}
-              href="#"
+              key={label}
+              href={href}
               className="relative px-3 py-2 text-sm text-slate-600 font-medium hover:text-slate-900 transition-colors duration-200 group"
             >
-              {link}
+              {label}
               <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-slate-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded-full" />
             </a>
           ))}
@@ -67,16 +74,16 @@ function Header() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden border-t border-gray-100 px-4 py-4 flex flex-col gap-1 bg-white overflow-hidden"
           >
-            {navLinks.map((link, i) => (
+            {navLinks.map(({ label, href }, i) => (
               <motion.a
-                key={link}
-                href="#"
+                key={label}
+                href={href}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
                 className="py-2.5 px-3 text-sm text-slate-700 font-medium hover:bg-slate-50 rounded-md transition-colors"
               >
-                {link}
+                {label}
               </motion.a>
             ))}
             <motion.button
