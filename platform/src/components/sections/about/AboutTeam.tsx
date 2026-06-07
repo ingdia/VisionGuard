@@ -1,7 +1,7 @@
 "use client";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations";
 import { motion } from "framer-motion";
-import { Linkedin, Twitter } from "lucide-react";
+import { Link2, Share2 } from "lucide-react";
 
 const team = [
   { name: "Ngabi Blackiane", role: "Founder & CEO", initials: "NB", desc: "Passionate about using technology to solve real problems in Rwanda and across Africa." },
@@ -43,7 +43,7 @@ export default function AboutTeam() {
                 <span className="text-slate-500 group-hover:text-slate-300 text-xs font-medium mt-1 transition-colors duration-300">{role}</span>
                 <p className="text-slate-400 group-hover:text-slate-400 text-xs leading-relaxed mt-3 transition-colors duration-300">{desc}</p>
                 <div className="mt-5 flex gap-3">
-                  {[Linkedin, Twitter].map((Icon, i) => (
+                  {[Link2, Share2].map((Icon, i) => (
                     <a key={i} href="#" className="w-8 h-8 rounded-full bg-slate-200 group-hover:bg-slate-700 flex items-center justify-center transition-colors duration-300">
                       <Icon size={13} className="text-slate-600 group-hover:text-white transition-colors duration-300" />
                     </a>
